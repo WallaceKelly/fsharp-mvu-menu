@@ -1,0 +1,21 @@
+{
+    "name": "fsharp-mvu-menu-devenv",
+    "build": {
+      "dockerfile": "Dockerfile",
+    },
+    "containerEnv": {
+      "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
+      "GITHUB_USER": "${localEnv:GITHUB_USER}",
+    },
+    "runArgs": [
+      "--name=fsharp-mvu-menu-devenv",
+    ],
+    "extensions": [
+      "ionide.ionide-fsharp",
+    ],
+    "forwardPorts": [
+      8080,
+    ],
+    "postCreateCommand": "npm install -yq && dotnet tool restore && npm run build",
+    "postStartCommand": "npm start"
+}

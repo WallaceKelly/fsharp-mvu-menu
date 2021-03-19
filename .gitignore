@@ -1,0 +1,8 @@
+bin/
+obj/
+node_modules/
+/**/public/bundle.js
+.fake/
+.ionide/
+.fable/
+*.fs.js

@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    image: foosburgers_after
+    container_name: foosburgers_after
+    ports:
+      - "8080:80"
