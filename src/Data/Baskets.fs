@@ -21,6 +21,7 @@ let add (prevBasket: Basket) menuItem =
         prevBasket with
             Items = prevBasket.Items
                     |> List.append [ newBasketItem ]
+                    |> List.sortBy(fun i -> i.MenuItem.Id)
     }
     nextBasket
 
