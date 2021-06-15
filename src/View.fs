@@ -107,8 +107,11 @@ let renderBasket (dispatch: Msg -> unit) (basket: Basket) =
   Bulma.block [
     Bulma.title "Basket"
     Bulma.subtitle "What you have to look forward to!"
-    
-    renderBasketItems dispatch basket
+
+    if basket.Items.Length > 0 then
+      renderBasketItems dispatch basket
+    else
+      renderEmptyBasket ()
   ]
 
 let renderFooter () =
