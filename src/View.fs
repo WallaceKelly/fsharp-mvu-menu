@@ -89,7 +89,7 @@ let renderBasketItems (dispatch: Msg -> unit) (basket: Basket) =
       Bulma.block [
         text.hasTextRight
         prop.children [
-          Html.text $"{formatPrice subtotal}"
+          Html.text $"Subtotal: {formatPrice subtotal}"
         ]
       ]
     ]
