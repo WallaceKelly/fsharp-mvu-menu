@@ -72,6 +72,17 @@ let renderBasketItem (dispatch: Msg -> unit) (item: BasketItem) =
         columns.isVCentered
         prop.children [
           Bulma.column (Html.text lineItem)
+          Bulma.column [
+            column.isNarrow
+            prop.children [
+              Bulma.button.button [
+                button.isSmall
+                color.isLight
+                prop.className "fa fa-minus"
+                prop.onClick (fun _ -> dispatch (RemoveItem item.Id))
+              ]
+            ]
+          ]
         ]
       ]
     )
