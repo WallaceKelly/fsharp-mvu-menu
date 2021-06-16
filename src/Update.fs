@@ -13,3 +13,8 @@ let update (msg: Msg) (prevState: State): State =
             |> Basket.add prevState.Basket
         let nextState = { prevState with Basket = newBasket }
         nextState
+
+    | RemoveItem basketItemId ->
+        let newBasket = Basket.remove prevState.Basket basketItemId
+        let nextState = { prevState with Basket = newBasket }
+        nextState
