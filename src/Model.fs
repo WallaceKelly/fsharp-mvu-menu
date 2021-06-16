@@ -11,6 +11,7 @@ type State = {
 
 type Msg =
     | AddItem of int
+    | RemoveItem of Guid
 
 let init() = {
     Menu = Menu.sample
